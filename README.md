@@ -1,16 +1,23 @@
+<!--
+SPDX-FileComment: Project Homepage: https://github.com/rstammdev/comma-qt
+SPDX-FileCopyrightText: 2025 Ralf Stamm
+SPDX-License-Identifier: GPL-3.0-only
+-->
 
-<img src="res/icons/apps/16/comma-qt.svg" alt="Comma-Qt" width="64" height="64" style="float: left;">
 
-# Comma-Qt
-
-An easy-to-use application for viewing and editing tabular files
+<table>
+  <tr>
+    <td valign="middle"><img src="res/icons/apps/16/comma-qt.svg" alt="Comma-Qt" width="72" height="72"></td>
+    <td valign="middle" style="padding-left:16px;"><h1>Comma-Qt</h1><p>Easy-to-use application for viewing and editing tabular files</p></td>
+  </tr>
+</table>
 
 
 ## About
 
 Tabular files, also known as spreadsheet files, are digital data storage formats that organize information into rows and columns, similar to a traditional spreadsheet. They are commonly used for storing and managing data in a structured manner, making it easier to analyze, manipulate, and visualize.
 
-[Comma-Qt](https://rstammdev.github.io/comma-qt "Visit Comma-Qt's homepage") is a free open-source application for viewing and editing these tabular files written in C++ using the Qt framework.
+[Comma-Qt](https://rstammdev.github.io/comma-qt "Visit project's homepage") is a free open-source application for viewing and editing these tabular files written in C++ using the Qt framework.
 
 Copyright &copy; 2025 [Ralf Stamm](https://rstammdev.github.io "Visit organization's homepage").
 
