@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
 {
 
+    setWindowIcon(QIcon::fromTheme("comma-qt"_L1, QIcon(":/icons/apps/16/comma-qt"_L1)));
     setMinimumSize(854, 480);
 
 }
