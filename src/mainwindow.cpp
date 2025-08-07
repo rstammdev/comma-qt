@@ -11,6 +11,10 @@ using namespace Qt::Literals::StringLiterals;
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
-{}
+{
+
+    setMinimumSize(854, 480);
+
+}
 
 MainWindow::~MainWindow() {}
