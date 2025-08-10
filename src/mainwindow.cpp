@@ -6,6 +6,7 @@
 
 #include "mainwindow.h"
 
+#include <QMenuBar>
 #include <QSettings>
 
 using namespace Qt::Literals::StringLiterals;
@@ -15,6 +16,7 @@ MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
 {
 
+    setupUi();
     loadSettings();
 
     setWindowIcon(QIcon::fromTheme("comma-qt"_L1, QIcon(":/icons/apps/16/comma-qt"_L1)));
@@ -24,6 +26,15 @@ MainWindow::MainWindow(QWidget* parent)
 
 MainWindow::~MainWindow() {}
 
+
+void MainWindow::setupUi()
+{
+    // File menu
+
+    QMenu* menuFile = menuBar()->addMenu(tr("&File"));
+    menuFile->setObjectName("menuFile"_L1);
+
+}
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
