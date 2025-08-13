@@ -27,6 +27,7 @@ private slots:
     void toggleFullScreen(bool checked);
     void triggerConfigureLanguageDialog();
     void triggerConfigureShortcutsDialog();
+    void triggerConfigureDialog();
 
 private:
     void setupUi();
