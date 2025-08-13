@@ -97,6 +97,13 @@ void MainWindow::setupUi()
     actionConfigureKeyboardShortcuts->setStatusTip(tr("Configure the application's keyboard shortcut assignments"));
     actionConfigureKeyboardShortcuts->setToolTip(tr("Configure the application's keyboard shortcut assignments."));
 
+    QAction* actionConfigureToolbars = addAction(tr("Configure &Toolbars..."));
+    actionConfigureToolbars->setObjectName("actionConfigureToolbars"_L1);
+    actionConfigureToolbars->setIcon(QIcon::fromTheme("configure-toolbars"_L1, QIcon(":/icons/actions/16/configure-toolbars"_L1)));
+    actionConfigureToolbars->setIconText(tr("Toolbars"));
+    actionConfigureToolbars->setStatusTip(tr("Configure which items should appear in the toolbars"));
+    actionConfigureToolbars->setToolTip(tr("Configure which items should appear in the toolbars."));
+
     QAction* actionConfigure = addAction(tr("&Configure..."));
     actionConfigure->setObjectName("actionConfigure"_L1);
     actionConfigure->setIcon(QIcon::fromTheme("configure"_L1, QIcon(":/icons/actions/16/configure"_L1)));
@@ -119,6 +126,7 @@ void MainWindow::setupUi()
     menuSettings->addSeparator();
     menuSettings->addAction(actionConfigureLanguage);
     menuSettings->addAction(actionConfigureKeyboardShortcuts);
+    menuSettings->addAction(actionConfigureToolbars);
     menuSettings->addAction(actionConfigure);
 
     QToolBar* toolbarSettings = addToolBar(tr("Settings Toolbar"));
@@ -137,6 +145,7 @@ void MainWindow::setupUi()
     connect(m_actionShowStatusbar, &QAction::toggled, statusBar(), &QStatusBar::setVisible);
     connect(actionConfigureLanguage, &QAction::triggered, this, &MainWindow::triggerConfigureLanguageDialog);
     connect(actionConfigureKeyboardShortcuts, &QAction::triggered, this, &MainWindow::triggerConfigureShortcutsDialog);
+    connect(actionConfigureToolbars, &QAction::triggered, this, &MainWindow::triggerConfigureToolbarsDialog);
     connect(actionConfigure, &QAction::triggered, this, &MainWindow::triggerConfigureDialog);
 
     // Show Toolbars menu
@@ -228,6 +237,12 @@ void MainWindow::triggerConfigureLanguageDialog()
 
 
 void MainWindow::triggerConfigureShortcutsDialog()
+{
+
+}
+
+
+void MainWindow::triggerConfigureToolbarsDialog()
 {
 
 }
