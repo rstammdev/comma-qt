@@ -98,6 +98,13 @@ void MainWindow::setupUi()
     actionConfigureKeyboardShortcuts->setStatusTip(tr("Configure the application's keyboard shortcut assignments"));
     actionConfigureKeyboardShortcuts->setToolTip(tr("Configure the application's keyboard shortcut assignments."));
 
+    QAction* actionConfigurePanels = addAction(tr("Configure &Panels..."));
+    actionConfigurePanels->setObjectName("actionConfigurePanels"_L1);
+    actionConfigurePanels->setIcon(QIcon::fromTheme("configure"_L1, QIcon(":/icons/actions/16/configure"_L1)));
+    actionConfigurePanels->setIconText(tr("Panels"));
+    actionConfigurePanels->setStatusTip(tr("Configure which items should appear in the panels"));
+    actionConfigurePanels->setToolTip(tr("Configure which items should appear in the panels."));
+
     QAction* actionConfigureToolbars = addAction(tr("Configure &Toolbars..."));
     actionConfigureToolbars->setObjectName("actionConfigureToolbars"_L1);
     actionConfigureToolbars->setIcon(QIcon::fromTheme("configure-toolbars"_L1, QIcon(":/icons/actions/16/configure-toolbars"_L1)));
@@ -131,6 +138,7 @@ void MainWindow::setupUi()
     menuSettings->addSeparator();
     menuSettings->addAction(actionConfigureLanguage);
     menuSettings->addAction(actionConfigureKeyboardShortcuts);
+    menuSettings->addAction(actionConfigurePanels);
     menuSettings->addAction(actionConfigureToolbars);
     menuSettings->addAction(actionConfigure);
 
@@ -157,6 +165,7 @@ void MainWindow::setupUi()
     connect(m_actionShowStatusbar, &QAction::toggled, statusBar(), &QStatusBar::setVisible);
     connect(actionConfigureLanguage, &QAction::triggered, this, &MainWindow::triggerConfigureLanguageDialog);
     connect(actionConfigureKeyboardShortcuts, &QAction::triggered, this, &MainWindow::triggerConfigureShortcutsDialog);
+    connect(actionConfigurePanels, &QAction::triggered, this, &MainWindow::triggerConfigurePanelsDialog);
     connect(actionConfigureToolbars, &QAction::triggered, this, &MainWindow::triggerConfigureToolbarsDialog);
     connect(actionConfigure, &QAction::triggered, this, &MainWindow::triggerConfigureDialog);
 
@@ -253,6 +262,12 @@ void MainWindow::triggerConfigureLanguageDialog()
 
 
 void MainWindow::triggerConfigureShortcutsDialog()
+{
+
+}
+
+
+void MainWindow::triggerConfigurePanelsDialog()
 {
 
 }
