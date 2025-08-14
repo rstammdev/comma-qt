@@ -5,12 +5,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 
-<table>
-  <tr>
-    <td valign="middle"><img src="res/icons/apps/16/comma-qt.svg" alt="Comma-Qt" width="72" height="72"></td>
-    <td valign="middle" style="padding-left:16px;"><h1>Comma-Qt</h1><p>Easy-to-use application for viewing and editing tabular files</p></td>
-  </tr>
-</table>
+<h1 align="center">Comma-Qt</h1>
+<p align="center">Easy-to-use application for viewing and editing tabular files</p>
 
 
 ## About
