@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
     app.setApplicationName("Comma-Qt"_L1);
     app.setApplicationVersion("0.1.0"_L1);
     app.setApplicationDisplayName("Comma-Qt"_L1);
-    app.setDesktopFileName("io.github.rstamm.comma_qt"_L1);
+    app.setDesktopFileName("io.github.rstammdev.comma_qt"_L1);
 
     QTranslator translator;
     QStringList uiLanguages;
