@@ -15,20 +15,25 @@
 using namespace Qt::Literals::StringLiterals;
 
 
-AboutPageGeneral::AboutPageGeneral(QWidget* parent)
+//
+// Authors
+
+AboutPageAuthors::AboutPageAuthors(QWidget* parent)
     : AboutPage{parent}
 {
-    const QStringList paragraphs = {
-        tr("Tabular files, also known as spreadsheet files, are digital data storage formats that organize information into rows and columns, similar to a traditional spreadsheet. They are commonly used for storing and managing data in a structured manner, making it easier to analyze, manipulate, and visualize."),
-        tr("<a href=\"https://rstammdev.github.io/comma-qt\" title=\"Visit project's homepage\">Comma-Qt</a> is a free open-source application for viewing and editing these tabular files written in C++ using the Qt framework."),
-        tr("Copyright &copy; 2025 <a href=\"%2\" title=\"Visit organization's homepage\">%1</a>.").arg(QApplication::organizationName(), QApplication::organizationDomain()),
-        tr("This program is distributed under the terms of the <a href=\"https://www.gnu.org/licenses/gpl-3.0.en.html\" title=\"Visit license's homepage\">GNU General Public License</a>, either version 3 of the License, or any later version.")
+    const QList<QStringList> items = {
+        {
+            tr("Ralf Stamm"),
+            tr("Created and developed by <a href=\"https://rstammdev.github.io\" title=\"Visit contributor's homepage\">Ralf Stamm</a>.")
+        }
     };
 
-    QString text;
-    for (const QString& paragraph : paragraphs) {
-        text += tr("<p>%1</p>\n").arg(paragraph);
+    QString text = tr("<dl>");
+    for (QStringList item : items) {
+        text += tr("<dt><strong>%1</strong></dt>").arg(item[0]);
+        text += tr("<dd>%1</dd>").arg(item[1]);
     }
+    text += tr("</dl>");
 
     QLabel* content = new QLabel;
     content->setText(text);
@@ -42,9 +47,12 @@ AboutPageGeneral::AboutPageGeneral(QWidget* parent)
     layout->addStretch();
     setLayout(layout);
 
-    setPageTitle(tr("General"));
+    setPageTitle(tr("Authors"));
 }
 
+
+//
+// Components
 
 AboutPageComponents::AboutPageComponents(QWidget* parent)
     : AboutPage{parent}
@@ -100,38 +108,8 @@ QString AboutPageComponents::prettyPlatformName() const
 }
 
 
-AboutPageAuthors::AboutPageAuthors(QWidget* parent)
-    : AboutPage{parent}
-{
-    const QList<QStringList> items = {
-        {
-            tr("Ralf Stamm"),
-            tr("Created and developed by <a href=\"https://rstammdev.github.io\" title=\"Visit contributor's homepage\">Ralf Stamm</a>.")
-        }
-    };
-
-    QString text = tr("<dl>");
-    for (QStringList item : items) {
-        text += tr("<dt><strong>%1</strong></dt>").arg(item[0]);
-        text += tr("<dd>%1</dd>").arg(item[1]);
-    }
-    text += tr("</dl>");
-
-    QLabel* content = new QLabel;
-    content->setText(text);
-    content->setTextFormat(Qt::RichText);
-    content->setTextInteractionFlags(Qt::TextBrowserInteraction);
-    content->setOpenExternalLinks(true);
-    content->setWordWrap(true);
-
-    QVBoxLayout* layout = new QVBoxLayout;
-    layout->addWidget(content);
-    layout->addStretch();
-    setLayout(layout);
-
-    setPageTitle(tr("Authors"));
-}
-
+//
+// Credits
 
 AboutPageCredits::AboutPageCredits(QWidget* parent)
     : AboutPage{parent}
@@ -169,6 +147,43 @@ AboutPageCredits::AboutPageCredits(QWidget* parent)
     setPageTitle(tr("Credits"));
 }
 
+
+//
+// General
+
+AboutPageGeneral::AboutPageGeneral(QWidget* parent)
+    : AboutPage{parent}
+{
+    const QStringList paragraphs = {
+        tr("Tabular files, also known as spreadsheet files, are digital data storage formats that organize information into rows and columns, similar to a traditional spreadsheet. They are commonly used for storing and managing data in a structured manner, making it easier to analyze, manipulate, and visualize."),
+        tr("<a href=\"https://rstammdev.github.io/comma-qt\" title=\"Visit project's homepage\">Comma-Qt</a> is a free open-source application for viewing and editing these tabular files written in C++ using the Qt framework."),
+        tr("Copyright &copy; 2025 <a href=\"%2\" title=\"Visit organization's homepage\">%1</a>.").arg(QApplication::organizationName(), QApplication::organizationDomain()),
+        tr("This program is distributed under the terms of the <a href=\"https://www.gnu.org/licenses/gpl-3.0.en.html\" title=\"Visit license's homepage\">GNU General Public License</a>, either version 3 of the License, or any later version.")
+    };
+
+    QString text;
+    for (const QString& paragraph : paragraphs) {
+        text += tr("<p>%1</p>\n").arg(paragraph);
+    }
+
+    QLabel* content = new QLabel;
+    content->setText(text);
+    content->setTextFormat(Qt::RichText);
+    content->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    content->setOpenExternalLinks(true);
+    content->setWordWrap(true);
+
+    QVBoxLayout* layout = new QVBoxLayout;
+    layout->addWidget(content);
+    layout->addStretch();
+    setLayout(layout);
+
+    setPageTitle(tr("General"));
+}
+
+
+//
+// License
 
 AboutPageLicense::AboutPageLicense(QWidget* parent)
     : AboutPage{parent}
